@@ -1,0 +1,6 @@
+C:\Users\k.b.8anos\source\repos\PrivateSchoolThanosKatrakis\PrivateSchoolThanosKatrakis\bin\Debug\PrivateSchoolThanosKatrakis.exe.config
+C:\Users\k.b.8anos\source\repos\PrivateSchoolThanosKatrakis\PrivateSchoolThanosKatrakis\bin\Debug\PrivateSchoolThanosKatrakis.exe
+C:\Users\k.b.8anos\source\repos\PrivateSchoolThanosKatrakis\PrivateSchoolThanosKatrakis\bin\Debug\PrivateSchoolThanosKatrakis.pdb
+C:\Users\k.b.8anos\source\repos\PrivateSchoolThanosKatrakis\PrivateSchoolThanosKatrakis\obj\Debug\PrivateSchoolThanosKatrakis.csprojAssemblyReference.cache
+C:\Users\k.b.8anos\source\repos\PrivateSchoolThanosKatrakis\PrivateSchoolThanosKatrakis\obj\Debug\PrivateSchoolThanosKatrakis.exe
+C:\Users\k.b.8anos\source\repos\PrivateSchoolThanosKatrakis\PrivateSchoolThanosKatrakis\obj\Debug\PrivateSchoolThanosKatrakis.pdb

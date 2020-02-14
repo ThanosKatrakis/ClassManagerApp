@@ -1,0 +1,63 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ALL QUERIES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+1)	View list of all Students	=> 	
+	SELECT * FROM Student;
+	
+
+2)	View list of all Trainers	=> 	
+	SELECT * FROM Trainer;
+	
+
+3)	View list of all Assignments	=> 	
+	SELECT * FROM Assignment;
+
+
+4)	View list of all Courses	=>	
+	SELECT * FROM Course;
+	
+
+5)	View list of all Students Per Course	=>
+	SELECT FirstName, LastName, Title, Type
+	FROM Student
+	INNER JOIN AssignmentPerCoursePerStudent ON Student.StudentID = AssignmentPerCoursePerStudent.StudentID
+	INNER JOIN Course ON AssignmentPerCoursePerStudent.CourseID = Course.CourseID;
+
+
+6)	View list of all Trainers Per Course	=>	
+	SELECT FirstName, LastName, Subject, Title, Type
+	FROM Trainer
+	INNER JOIN TrainerPerCourse ON Trainer.TrainerID = TrainerPerCourse.TrainerID
+	INNER JOIN Course ON TrainerPerCourse.CourseID = Course.CourseID;
+	
+
+7)	View list of all Assignments Per Course	=>
+	SELECT DISTINCT Assignment.Title, Discription, Course.Title, Course.Type
+	FROM Assignment
+	INNER JOIN AssignmentPerCoursePerStudent ON Assignment.AssignmentID = AssignmentPerCoursePerStudent.AssignmentID
+	INNER JOIN Course ON AssignmentPerCoursePerStudent.CourseID = Course.CourseID;
+
+
+8)	View list of all Assignments Per Course Per Student	=>
+	SELECT DISTINCT Assignment.Title, Assignment.Discription, Course.Title, Course.Type, Student.FirstName, Student.LastName
+	FROM Assignment
+	INNER JOIN AssignmentPerCoursePerStudent ON Assignment.AssignmentID = AssignmentPerCoursePerStudent.AssignmentID
+	INNER JOIN Course ON AssignmentPerCoursePerStudent.CourseID = Course.CourseID
+	INNER JOIN Student on AssignmentPerCoursePerStudent.StudentID = Student.StudentID;
+	
+
+9)	View Students with more than one Courses	=>
+	select DISTINCT Student.StudentID, FirstName, LastName, DateOfBirth
+	from Student
+	inner join AssignmentPerCoursePerStudent on Student.StudentID = AssignmentPerCoursePerStudent.StudentID
+	inner join course on AssignmentPerCoursePerStudent.CourseID = Course.CourseID
+	group by FirstName, LastName, Student.StudentID, DateOfBirth
+	having count(DISTINCT AssignmentPerCoursePerStudent.CourseID)>1;
+	
+	
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
